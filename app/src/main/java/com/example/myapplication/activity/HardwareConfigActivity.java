@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 
 public class HardwareConfigActivity extends AppCompatActivity {
 
