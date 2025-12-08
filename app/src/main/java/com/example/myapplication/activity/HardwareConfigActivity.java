@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.activity;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -7,9 +7,13 @@ import android.os.Bundle;
 import android.os.Build;
 import android.util.DisplayMetrics;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication.MainActivity;
+import com.example.myapplication.R;
 
 
 public class HardwareConfigActivity extends AppCompatActivity {
@@ -20,7 +24,8 @@ public class HardwareConfigActivity extends AppCompatActivity {
         setContentView(R.layout.hardware_activity);
 
         TextView textView = findViewById(R.id.hardware_config_text);
-        Button homePageButton=findViewById(R.id.homepage_button);
+        ImageButton homePageButton = findViewById(R.id.homepage_button);
+
         StringBuilder sb = new StringBuilder();
         sb.append("Model: ").append(Build.MODEL).append("\n");
         sb.append("Brand: ").append(Build.BRAND).append("\n");
@@ -40,8 +45,8 @@ public class HardwareConfigActivity extends AppCompatActivity {
         sb.append("Available RAM: ").append(memInfo.availMem / (1024 * 1024)).append(" MB\n\n");
         textView.setText(sb.toString());
 
-        homePageButton.setOnClickListener(view->{
-            Intent intent = new Intent(HardwareConfigActivity.this, com.example.myapplication.MainActivity.class);
+        homePageButton.setOnClickListener(view -> {
+            Intent intent = new Intent(HardwareConfigActivity.this, MainActivity.class);
             startActivity(intent);
         });
     }

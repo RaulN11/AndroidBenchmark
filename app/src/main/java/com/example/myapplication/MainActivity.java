@@ -14,6 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.myapplication.activity.HardwareConfigActivity;
 import com.example.myapplication.model.BenchmarkResult;
 import com.example.myapplication.util.BenchmarkUtil;
 import com.example.myapplication.gpu.MyGLRenderer;
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                     double avgMs = result.getAverage() / 1000000.0;
                     double maxMs = result.getMax_time() / 1000000.0;
                     double minMs = result.getMin_time() / 1000000.0;
-                      runOnUiThread(() -> graphics_processing_result.setText(String.format("Average: %.3f ms\nMin: %.3f ms\nMax: %.3f ms", avgMs, minMs, maxMs)));
+                    runOnUiThread(() -> graphics_processing_result.setText(String.format("Average: %.3f ms\nMin: %.3f ms\nMax: %.3f ms", avgMs, minMs, maxMs)));
                 } else {
                     runOnUiThread(() -> graphics_processing_result.setText("Graphics Test Failed."));
                 }
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         hardware_config_button.setOnClickListener(view->{
-            Intent intent = new Intent(MainActivity.this, com.example.myapplication.HardwareConfigActivity.class);
+            Intent intent = new Intent(MainActivity.this, HardwareConfigActivity.class);
             startActivity(intent);
         });
     }

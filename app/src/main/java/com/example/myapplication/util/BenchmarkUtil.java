@@ -90,7 +90,7 @@ public final class BenchmarkUtil {
                 lock.notifyAll();
             }
         });
-
+ 
         for (int i = 0; i < iterations; i++) {
             Log.d(TAG, "Starting iteration " + i);
 
